@@ -83,7 +83,7 @@ FROM
 ORDER BY
     avg_annual_price_increase DESC;
 ```
-The results of this query can be found in the DistrictAnnualPriceIncreases.csv file of this repository.
+The results of this query can be found in the AverageAnnualPriceIncrease.csv file of this repository.
 ## Average Monthly Sales by District 
 ```sql
 CREATE VIEW DistrictAverageMonthlySales AS
