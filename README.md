@@ -108,8 +108,16 @@ AverageMonthlySales AS (
         MonthlySalesVolume
     GROUP BY
         district
-);
+)
+SELECT
+    district,
+    CAST(avg_monthly_sales AS DECIMAL(10,2)) AS avg_monthly_sales
+FROM
+    AverageMonthlySales
+ORDER BY
+    avg_monthly_sales DESC;
 ```
+The results of this query can be found in the AverageMonthlySalesVolume.csv file of this repository.
 ## Statistics
 ```sql
 -- Create View for Annual Price Increase Stats (Mean and StdDev)
