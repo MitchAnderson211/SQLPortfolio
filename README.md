@@ -145,19 +145,4 @@ SELECT
 	  cast(investment_score AS DECIMAL (10,2)) 
 FROM DistrictInvestmentZScore;
 ```
-"district"	"investment_score"
-4	2.01
-7	0.55
-14	0.28
-9	0.09
-3	0.04
-12	0.02
-6	0.00
-11	-0.03
-2	-0.11
-13	-0.13
-5	-0.23
-15	-0.32
-10	-0.47
-8	-0.85
-1	-0.85
+The results of this query can be found in the InvestmentScoreFinal.csv file in thie repository.
