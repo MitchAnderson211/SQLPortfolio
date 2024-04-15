@@ -74,8 +74,16 @@ DistrictPriceTrends AS (
         PropertyPriceChanges
     GROUP BY
         district
-);
+)
+SELECT
+    district,
+    cast(avg_annual_price_increase as decimal(10,2)) AS avg_annual_price_increase
+FROM
+    DistrictPriceTrends
+ORDER BY
+    avg_annual_price_increase DESC;
 ```
+The results of this query can be found in the DistrictAnnualPriceIncreases.csv file of this repository.
 ## Average Monthly Sales by District 
 ```sql
 CREATE VIEW DistrictAverageMonthlySales AS
