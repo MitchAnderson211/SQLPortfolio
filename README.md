@@ -1,6 +1,6 @@
 # Real Estate Market Analysis for Investment Opportunities
 ## Project Description
-This project is a detailed analysis of real estate sales data from 2002 to 2018 in Milwaukee WI, and the surrounding areas. The end-goal was to provide a holistic metric that would allow a potential investor to identify districts with the highest likelihood of investment success. The project utilizes SQL for data manipulation and analysis including data cleaning, exploratory analysis, and advanced metrics computation such as Z-score normalization.
+This project is a detailed analysis of real estate sales data from 2002 to 2018 in Milwaukee WI, and the surrounding areas. The end-goal was to provide a composite metric that would allow a potential investor to identify districts with the highest likelihood of investment success based on two important metrics, property value increase and sales volume. The project utilizes SQL for data manipulation and analysis including data cleaning, exploratory analysis, and advanced metrics computation such as Z-score normalization.
 ## Data Source
 This project utilized the "2002-2018 Property Sales Data" from the following link:
 https://www.kaggle.com/datasets/agungpambudi/property-sales-data-real-estate-trends
@@ -119,6 +119,7 @@ ORDER BY
 ```
 The results of this query can be found in the AverageMonthlySalesVolume.csv file of this repository.
 ## Statistics
+The following SQL query is used to gather basic statistics that will be necessary to complete Z-Score normalization. This normalization is necessary due to the values for Average Annual Price Increase being larger than those for Average Monthly Sales Volume.
 ```sql
 -- Create View for Annual Price Increase Stats (Mean and StdDev)
 CREATE VIEW AnnualPriceIncreaseStats AS
@@ -137,6 +138,7 @@ FROM
     DistrictAverageMonthlySales;
 ```
 ## Investment Score (Z-Score Normalization)
+This SQL query results in a final "Investment Score" for each district. It performs Z-Score normalization which wll allow for Average Annual Price Increase and Average Monthly Sales Volume to contribute equally to the final investment score by putting them on a common scale. This query also weights the impact average annual price increase has on the final investment score to be greater than that of  average monthly sales volume. 
 ```sql
 CREATE VIEW DistrictInvestmentZScore AS
 SELECT
@@ -162,3 +164,5 @@ SELECT
 FROM DistrictInvestmentZScore;
 ```
 The results of this query can be found in the InvestmentScoreFinal.csv file in thie repository.
+## Conclusion
+This project analyzed real estate sales data from Milwaukee, WI, from 2002 to 2018 to develop a holistic investment metric that identifies districts with high investment potential. By employing SQL for extensive data manipulation, including data cleaning and advanced computations like Z-score normalization, we established two primary metrics: the average annual price increase and the average monthly sales volume. These metrics were standardized and combined to form an investment score, which ranks districts on their likelihood of providing a positive return on investment.
