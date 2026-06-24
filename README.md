@@ -164,5 +164,10 @@ SELECT
 FROM DistrictInvestmentZScore;
 ```
 The results of this query can be found in the InvestmentScoreFinal.csv file in thie repository.
-## Conclusion
-This project analyzed real estate sales data from 2002 to 2018 to develop a composite investment metric that identifies districts with high investment potential. By employing SQL for extensive data manipulation, including data cleaning and advanced computations like Z-score normalization, we established two primary metrics: the average annual price increase and the average monthly sales volume. These metrics were standardized and combined to form an investment score, which ranks districts on their likelihood of providing a positive return on investment.
+## Results
+
+DistrictInvestment Score42.0170.55140.2890.0930.04120.0260.0011-0.032-0.1113-0.135-0.2315-0.3210-0.478-0.851-0.85
+
+District 4 is the clear standout at 2.01 — more than 3.5x the next closest district. The gap isn't noise; it reflects a district that ranked highly on both appreciation and volume, compounding its score under the weighted model. Districts 1 and 8 tied at the bottom, both scoring -0.85.
+
+Full results with intermediate calculations are in the CSV files in this repo.
