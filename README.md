@@ -37,6 +37,8 @@ ALTER COLUMN sale_date TYPE DATE
 USING TO_DATE(sale_date || '-01', 'YYYY-MM-DD');
 ```
 ## Average Annual Price Increase by District
+
+For each property that sold more than once, I calculated the price change between sales and annualized it. Then I averaged those annualized changes across all properties in each district to get a per-district appreciation rate.
 ```sql
 CREATE VIEW DistrictAnnualPriceIncreases AS
 -- Identify properties with more than one sale record.
@@ -83,7 +85,6 @@ FROM
 ORDER BY
     avg_annual_price_increase DESC;
 ```
-The results of this query can be found in the AverageAnnualPriceIncrease.csv file of this repository.
 ## Average Monthly Sales by District 
 ```sql
 CREATE VIEW DistrictAverageMonthlySales AS
@@ -117,7 +118,7 @@ FROM
 ORDER BY
     avg_monthly_sales DESC;
 ```
-The results of this query can be found in the AverageMonthlySalesVolume.csv file of this repository.
+
 ## Statistics
 The following SQL query is used to gather basic statistics that will be necessary to complete Z-Score normalization.
 ```sql
@@ -190,3 +191,13 @@ The results of this query can be found in the InvestmentScoreFinal.csv file in t
 District 4 is the clear standout at 2.01, more than 3.5x the next closest district. This gap isn't noise, it reflects a district that ranked highly on both appreciation and volume. Districts 1 and 8 tied at the bottom, both scoring -0.85.
 
 Full results with intermediate calculations are in the CSV files in this repo.
+
+##SQL Concepts Used
+
+
+CTEs (Common Table Expressions)
+Window functions (LEAD, PARTITION BY)
+Z-score normalization
+Weighted composite scoring
+Views for modular query structure
+Data type handling and casting
