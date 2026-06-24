@@ -3,7 +3,7 @@
 This project is a detailed analysis of real estate sales data from 2002 to 2018. The end-goal was to provide a composite metric that would allow a potential investor to identify districts with the highest likelihood of investment success based on two important metrics, property value increase and sales volume. The project utilizes SQL for data manipulation and analysis including data cleaning, exploratory analysis, and advanced metrics computation such as Z-score normalization.
 
 ## The Problem
-If you're a real estate investor, you need to know two things: which districts are growing and value and which ones are liquid enough to exit when you want to. This can be difficult to gain insight on since these two metrics are on completely different scales, one measured in the hundreds of thousands and the other measured in ones and tens. This project builds a composite investment score that puts both metrics on a common scale and ranks each district based on this composite score.
+If you're a real estate investor, you need to know two things: which districts are growing in value and which ones are liquid enough to exit when you want to. This can be difficult to gain insight on since these two metrics are on completely different scales, one measured in the hundreds of thousands and the other measured in ones and tens. This project builds a composite investment score that puts both metrics on a common scale and ranks each district based on this composite score.
 
 ## Data Source
 This project utilized the "2002-2018 Property Sales Data" from the following link:
