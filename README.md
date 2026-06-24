@@ -30,7 +30,7 @@ CREATE TABLE Properties(
 );
 ```
 ## Correcting Data Types
-Since the sale_date column could not be imported as DATE data type due to having the format of YYYY-MM, this code accomplishes amending all dates to include a date which is sufficient as granularity to the month is all that is needed for this project's analysis. It also alters the sale_date colume to have the data type of DATE.
+Since the sale_date column could not be imported as DATE data type due to having the format of YYYY-MM, this code accomplishes amending all dates to include a date which is sufficient since this projects analysis will only be drilling down to the month, not day or week. It also alters the sale_date colume to have the data type of DATE.
 ```sql
 ALTER TABLE properties
 ALTER COLUMN sale_date TYPE DATE
@@ -119,7 +119,7 @@ ORDER BY
 ```
 The results of this query can be found in the AverageMonthlySalesVolume.csv file of this repository.
 ## Statistics
-The following SQL query is used to gather basic statistics that will be necessary to complete Z-Score normalization. This normalization is necessary due to the values for Average Annual Price Increase being larger than those for Average Monthly Sales Volume.
+The following SQL query is used to gather basic statistics that will be necessary to complete Z-Score normalization.
 ```sql
 -- Create View for Annual Price Increase Stats (Mean and StdDev)
 CREATE VIEW AnnualPriceIncreaseStats AS
@@ -138,7 +138,7 @@ FROM
     DistrictAverageMonthlySales;
 ```
 ## Investment Score (Z-Score Normalization)
-This SQL query results in a final "Investment Score" for each district. It performs Z-Score normalization which wll allow for Average Annual Price Increase and Average Monthly Sales Volume to contribute equally to the final investment score by putting them on a common scale. This query also weights the impact average annual price increase has on the final investment score to be greater than that of  average monthly sales volume. 
+This SQL query results in a final "Investment Score" for each district. It performs Z-Score normalization which wll allow for Average Annual Price Increase, which are large numbers, and Average Monthly Sales Volume, which are relatively small numbers, to contribute equally to the final investment score by putting them on a common scale. This query also weights the impact average annual price increase has on the final investment score to be greater than that of  average monthly sales volume. The 70/30 weighting was chosen to reflect investment logic: Long-term real estate investment returns are driven mainly by appreciation. Having high sales volume matters for liquidity, as a district with low market activity is difficult to exit, but that's a secondary factor.
 ```sql
 CREATE VIEW DistrictInvestmentZScore AS
 SELECT
@@ -155,6 +155,8 @@ JOIN
 ORDER BY
     investment_score DESC;
 ```
+
+
 ## Final Investment Score Results
 ```sql
 SELECT 
