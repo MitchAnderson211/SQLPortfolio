@@ -192,8 +192,8 @@ District 4 is the clear standout at 2.01, more than 3.5x the next closest distri
 
 Full results with intermediate calculations are in the CSV files in this repo.
 
+'''
 ## SQL Concepts Used
-
 
 Window functions (LEAD, PARTITION BY)
 Z-score normalization
