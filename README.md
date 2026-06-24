@@ -166,8 +166,24 @@ FROM DistrictInvestmentZScore;
 The results of this query can be found in the InvestmentScoreFinal.csv file in thie repository.
 ## Results
 
-DistrictInvestment Score42.0170.55140.2890.0930.04120.0260.0011-0.032-0.1113-0.135-0.2315-0.3210-0.478-0.851-0.85
+District	Investment Score
+4	2.01
+7	0.55
+14	0.28
+9	0.09
+3	0.04
+12	0.02
+6	0.00
+11	-0.03
+2	-0.11
+13	-0.13
+5	-0.23
+15	-0.32
+10	-0.47
+8	-0.85
+1	-0.85
 
-District 4 is the clear standout at 2.01 — more than 3.5x the next closest district. The gap isn't noise; it reflects a district that ranked highly on both appreciation and volume, compounding its score under the weighted model. Districts 1 and 8 tied at the bottom, both scoring -0.85.
+
+District 4 is the clear standout at 2.01, more than 3.5x the next closest district. This gap isn't noise, it reflects a district that ranked highly on both appreciation and volume. Districts 1 and 8 tied at the bottom, both scoring -0.85.
 
 Full results with intermediate calculations are in the CSV files in this repo.
