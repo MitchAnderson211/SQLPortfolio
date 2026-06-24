@@ -195,8 +195,8 @@ Full results with intermediate calculations are in the CSV files in this repo.
 
 ## SQL Concepts Used
 
-Window functions (LEAD, PARTITION BY)
-Z-score normalization
-Weighted composite scoring
-Views for modular query structure
+Window functions (LEAD, PARTITION BY), 
+Z-score normalization, 
+Weighted composite scoring, 
+Views for modular query structure, 
 Data type handling and casting
